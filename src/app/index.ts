@@ -3,7 +3,7 @@ import { json } from 'body-parser';
 import 'express-async-errors'
 import dotenv from "dotenv"
 
-import { users } from '../routes/users';
+import { googleCalendar } from '../routes/googleCalendar';
 import { errorHandler } from '../middlewares/error-handler';
 import { NotFoundError } from '../errors/not-found-error';
 
@@ -13,7 +13,7 @@ const port = process.env.PORT
 
 const app = express()
 app.use(json())
-app.use('/api/v1', users)
+app.use('/api/v1', googleCalendar)
 
 app.all('*', async (req, res) => {
   throw new NotFoundError()
