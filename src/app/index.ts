@@ -8,7 +8,6 @@ import { errorHandler } from '../middlewares/error-handler';
 import { NotFoundError } from '../errors/not-found-error';
 
 dotenv.config()
-
 const port = process.env.PORT
 
 const app = express()

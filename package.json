@@ -20,6 +20,8 @@
     "express-validator": "^7.0.1",
     "googleapis": "^126.0.1",
     "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^3.1.2",
+    "nodemailer": "^6.9.6",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.2.2",
     "xlsx": "^0.18.5"

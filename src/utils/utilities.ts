@@ -30,6 +30,47 @@ export class utilities {
         return randomString;
     }
 
+    static async generateRawData(data: any) {
+        console.log("incoming data.......",data)
+        const headers: any = [
+            'created',
+            'start.dateTime',
+            'start.timeZone',
+            'end.dateTime',
+            'end.timeZone',
+            'location',
+            'summary',
+            'description',
+            'creator.email',
+            'creator.self',
+            'organizer.email',
+            'organizer.self',
+            'etag',
+            'id',
+            'status',
+            'htmlLink',
+            'kind',
+            'updated',
+            'sequence',
+            'reminders',
+            'eventType'
+        ]
+
+        const transformedData = data.map((item: any) => {
+            const transformedItem: any = {};
+            for (const header of headers) {
+                const keys = header.split('.');
+                let value = item;
+                for (const key of keys) {
+                    value = value[key];
+                }
+                transformedItem[header] = value;
+            }
+            return transformedItem;
+        })
+
+        return transformedData
+    }
 
 
 }
